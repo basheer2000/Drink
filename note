@@ -1,0 +1,46 @@
+ <div className="container-fluid">
+
+        
+
+
+      {data.map((cocktail)=>(
+      <div className="row" key={cocktail.idDrink}>
+
+        <div className="col">
+
+
+
+        <h3>Name of the cocktail : {cocktail.strDrink}</h3>
+        <h3>Category of the cocktail : {cocktail.strCategory}</h3>
+        <h3>Glass of the cocktail : {cocktail.strGlass}</h3>
+        <h3>Ingredients of the cocktail : {cocktail.strIngredient1},{cocktail.strIngredient2}</h3>
+        <h3>date : {cocktail.dateModified}</h3>
+
+        </div>
+
+                
+
+        <div className="row-3"> <img src={cocktail.strDrinkThumb} alt="#" /></div> 
+        </div>
+        
+               
+                              
+                
+
+        ))}
+
+
+      
+    </div>
+    posts.filter((evt) => {
+      if (searchTitle === " ") {
+       
+        return evt;
+      } else if (
+        evt.strDrink.toLowerCase().includes(searchTitle.toLowerCase())
+      ) {
+        console.log(evt);
+        return   <h5 key={evt.idDrink}>{evt.strDrink}</h5>;
+      }
+
+    })
